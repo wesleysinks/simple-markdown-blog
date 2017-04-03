@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Lato|Noto+Sans|Noto+Serif');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    position:relative;
+    background: #fffbfb;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    height: 100%;
+    color: #333;
+}
+
+#footerDown {
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6em;
+}
+
+#headerWrap {
+    background-color: #ddd;
+    border-bottom: 1px solid #aaa;
+    -webkit-box-shadow: 0px 0px 20px 2px;
+    -moz-box-shadow: 0px 0px 20px 2px;
+    box-shadow: 0px 0px 20px 2px;
+}
+
+#mainHeader {
+    text-align: center;
+}
+
+#mainHeader, .content {
+    width: 90%;
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+h1#siteTitle a{
+    font-size: 2.5em;
+    font-family: 'Noto Serif', serif;
+}
+
+#siteTitle a {
+    font-weight: normal;
+}
+
+#siteTitle:after {
+    content: '•••';
+	  display: block;
+	  position: relative;
+	  top: 0;
+	  padding: 0 0 10px;
+	  margin: -15px;
+	  text-align: center;
+	  color: #bfbfbf;
+	  font-family: 'Lato', sans-serif;
+	  font-size: .4em;
+}
+
+p, li{
+    font-size: 1em;
+}
+
+p {
+    padding: .3em 0;
+}
+
+li {
+    padding: .1em 0;
+}
+
+ul {
+    list-style: outside circle;
+    text-indent: 20px;
+}
+
+p#siteDesc {
+    margin: 0;
+    letter-spacing: .2em;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+a:hover {
+    color: #111;
+    font-weight: bold;
+}
+
+nav {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto 0;
+}
+
+nav p {
+    margin: 2px;
+    font-style: italic;
+    font-size: .7em;
+}
+
+nav ul {
+    list-style: outside none;
+    margin: 2px;
+    padding: 0;
+    text-indent: 0;
+    padding-bottom: 5px;
+}
+
+nav li {
+    display: inline;
+    color: #08c;
+    
+    margin-right: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.wrap-centered {
+    width: 100%;
+    margin: 0 auto;
+}
+
+aside {
+    width: 15%;
+    margin: 20px 0 0;
+    padding: 5px 15px;
+    float: left;
+    background: #ddd;
+    border: 1px solid #aaa;
+    border-top-left-radius: 65px;
+    border-bottom-left-radius: 30px;
+    -webkit-box-shadow: 0px 5px 20px -5px;
+    -moz-box-shadow: 0px 5px 20px -5px;
+    box-shadow: 0px 5px 20px -5px;
+}
+
+aside h2, h3{
+    margin: 0;  
+}
+
+aside p {
+    text-align: center;
+    font-size: .8em;
+    color: #8c8b8b;
+}
+
+aside ul{
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    font-size: .8em;
+    margin: .7em 0 .7em 45px;
+}
+
+aside li {
+    text-indent: -50px;
+}
+
+aside li:before {
+    content: attr(time) " | ";
+    font-size: .8em;
+    color: #8c8b8b;
+}
+
+section {
+    width: 75%;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 20px 0 0;
+    border-left: 3px solid #bbb;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: #ddd;
+    border-top: 1px solid #aaa;
+    -webkit-box-shadow: 0px 0px 20px 2px;
+    -moz-box-shadow: 0px 0px 20px 2px;
+    box-shadow: 0px 0px 20px 2px;
+}
+
+footer p {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, a, .footnotes {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size:2.5em;  /* 40px/16=2.5em */
+    margin: 0;
+}
+
+h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+}
+
+.auth {
+    font-size: 0.7em;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+.footnotes, pre {
+    margin: 10px -10px;
+    padding: 5px;
+    background: #ddd;
+    border: 1px solid #aaa;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    -webkit-box-shadow: 0px 5px 20px -5px;
+    -moz-box-shadow: 0px 5px 20px -5px;
+    box-shadow: 0px 5px 20px -5px;
+}
+
+pre{
+    counter-reset: line;
+}
+
+pre:before {
+	  content: '>_';
+	  display: block;
+	  position: relative;
+	  top: 5px;
+	  padding: 10px 0 0;
+	  margin: -15px;
+	  text-align: center;
+	  color: #bfbfbf;
+	  font-family: 'Noto Sans', sans-serif;
+	  font-size: 1.2em;
+}
+
+code {
+    font-family: 'Cutive Mono', monospace;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.hljs {
+    background: transparent;
+}
+
+#authorImage {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 0;
+    border-radius: 50%;
+}
+
+img, iframe{
+    display: block;
+    margin: 10px auto;
+}
+
+img.inline {
+    display: inline;
+}
+
+.videoWrapper {
+	  position: relative;
+	  margin: 10px -10px;
+	  padding-bottom: 54.5%; /* 16:9 */
+	  padding-top: 25px;
+	  height: 0;
+}
+.videoWrapper iframe {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+}
+
+hr {
+	  border: 1px #cccbcb;
+	  text-align: center;
+	  width: 30px;
+}
+
+article {
+    margin-bottom: 15px;
+}
+
+article:after {
+	  content: '• • • ↿⇂ • • •';
+	  text-align: center;
+	  display: block;
+	  position: relative;
+	  top: 3px;
+	  padding: 0 10px;
+	  color: #cccbcb;
+	  font-family: 'Noto Serif', serif;
+	  font-size: 18px;
+}
+
+#viewAll {
+    text-align: center;
+    padding-top: 5px;
+    margin-bottom: 2px;
+}
+
+.footnotes hr {
+	  border: none;
+	  text-align: center;
+}
+
+.footnotes:before {
+	  content: 'Notes';
+	  text-align: center;
+	  display: block;
+	  position: relative;
+	  top: -5px;
+	  padding: 2px 0 0;
+	  margin: 0;
+	  color: #bfbfbf;
+	  font-family: 'Noto Sans', sans-serif;
+	  font-size: 1em;
+}
+
+.footnotes ol {
+    margin-left: 25px;
+}
+
+@media screen and (max-width: 1050px) {
+    .tinyDate {
+        display: none;
+    }
+
+@media screen and (max-width: 740px) {
+    nav {
+        text-align: center;
+    }
+    section {
+        width: 100%;
+        display: block;
+        border: none;
+    }
+    aside {
+        display: none;
+    }
+    nav li {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h1, h2, #siteTitle{
+        font-size: 1.5rem;
+    }
+    #siteTitle:after {
+	      padding: 0;
+	      margin: 0;
+	      font-size: .4em;
+    }
+    p, li, #siteDesc{
+        font-size: .8rem;
+    }
+    img, iframe {
+        width: 100%;
+    }
+    nav p {
+        display: none;
+    }
+}
