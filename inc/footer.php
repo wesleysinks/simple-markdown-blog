@@ -1,9 +1,7 @@
       <footer>
-        <p><span class="copy-left">&copy;</span><?php 
+        <p><?php 
         echo date('Y') . " " . $title . " - " . $description;
-        if($isSingle){
-          echo " - Pulling post content from " . $post;
-        } 
+        echo ' - <a href="/a-note-about-this-site">ABOUT THIS SITE</a>';
         ?></p>
       </footer>
     </div>

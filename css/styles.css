@@ -7,7 +7,7 @@
 
 html {
     position:relative;
-    background: #fffbfb;
+    background: #fffefe;
     height: 100%;
 }
 
@@ -78,16 +78,21 @@ p, li{
 }
 
 p {
-    padding: .3em 0;
+    margin: 1em 0;
+    line-height: 1.5em;
 }
 
 li {
-    padding: .1em 0;
+    line-height: 1em;
 }
 
 ul {
-    list-style: outside circle;
+    list-style: inside circle;
     text-indent: 20px;
+}
+
+ol {
+    margin-left: 25px;
 }
 
 p#siteDesc {
@@ -103,6 +108,12 @@ a {
 a:hover {
     color: #111;
     font-weight: bold;
+}
+
+article p a, 
+article ul a, 
+article ol a {
+    background: #faa;
 }
 
 nav {
@@ -227,10 +238,6 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
-ul {
-    list-style-position: inside;
-}
-
 .footnotes, pre {
     margin: 10px -10px;
     padding: 5px;
@@ -318,7 +325,7 @@ article:after {
 	  display: block;
 	  position: relative;
 	  top: 3px;
-	  padding: 0 10px;
+	  padding: 30px 10px;
 	  color: #cccbcb;
 	  font-family: 'Noto Serif', serif;
 	  font-size: 18px;

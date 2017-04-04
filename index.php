@@ -83,7 +83,11 @@ $isSingle = false;
         else
         {
           usort( $posts, function( $b, $a ) { return filemtime($a) - filemtime($b); });
-          for ($i = 1; $i <= $postsOnHome; $i++) {
+          $n = $postsOnHome;
+          if (count($posts) < $postsOnHome){
+            $n = count($posts);
+          }
+          for ($i = 1; $i <= $n; $i++) {
             $post = current($posts);
             ?><article><header><?php
             echo "<h1>" . articleName($post) . "</h1>";
