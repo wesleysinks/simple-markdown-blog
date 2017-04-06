@@ -13,7 +13,7 @@ $isSingle = false;
     <p>Recent posts:</p>
     <ul>
       <?php 
-      sortPosts($posts);
+      usort( $posts, function( $b, $a ) { return filemtime($a) - filemtime($b); });
       $n = $recentPosts;
       if (count($posts) < $recentPosts){
         $n = count($posts);
