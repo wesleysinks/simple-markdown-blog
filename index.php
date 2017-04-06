@@ -1,15 +1,8 @@
 <?php
 
-include 'plugin/Parsedown.php';
-include 'plugin/ParsedownExtra.php';
-require_once 'Michelf/MarkdownExtra.inc.php';
 require_once 'siteinfo.php';
 require_once 'inc/functions.php';
 require_once 'inc/header.php';
-
-
-// Get Markdown class
-use \Michelf\MarkdownExtra;
 
 $current = $_SERVER[REQUEST_URI];
 $posts = glob('posts/*.md');
@@ -20,8 +13,12 @@ $isSingle = false;
     <p>Recent posts:</p>
     <ul>
       <?php 
-      usort( $posts, function( $b, $a ) { return filemtime($a) - filemtime($b); });
-      for ($i = 1; $i <= $recentPosts; $i++) {
+      sortPosts($posts);
+      $n = $recentPosts;
+      if (count($posts) < $recentPosts){
+        $n = count($posts);
+      }
+      for ($i = 1; $i <= $n; $i++) {
         $post = current($posts);
         echo '<li>' . articleName($post) . '</li>';
         $post = next($posts);
@@ -41,61 +38,34 @@ $isSingle = false;
         if(array_search($current, slug($posts)) !== false){
           $isSingle = true;
           $post = 'posts' . $current . '.md';
-          
-          ?><article><header><?php
-            echo "<h1>" . articleName($post) . "</h1>";
-            echo "<p class=\"auth\">by: " . $author;
-            echo " | " . date ("m.d.Y | h:ia", filemtime($post)) . "</p>";
-            $content = file_get_contents($post);
-            echo MarkdownExtra::defaultTransform($content . '***');
-          ?></header></article><?php
+          displayArticle($post, $author);
         }
         
         ###RENDER FRONT PAGE IF SET###
         elseif($mainPage && $current == '/')
         {
           $post = 'posts/' . $mainPage . '.md';
-          ?><article><header><?php
-            echo "<h1>" . articleName($post) . "</h1>";
-            echo "<p class=\"auth\">by: " . $author;
-            echo " | " . date ("m.d.Y | h:ia", filemtime($post)) . "</p>";
-            $content = file_get_contents($post);
-            echo MarkdownExtra::defaultTransform($content . '***');
-          ?></header></article><?php
+          displayArticle($post, $author);
         }
         
         ###RENDER ALL POST PAGE###
         elseif($current == '/all')
         {
-          usort( $posts, function( $b, $a ) { return filemtime($a) - filemtime($b); });
           foreach ($posts as $post) {
-            ?><article><header><?php
-            echo "<h1>" . articleName($post) . "</h1>";
-            echo "<p class=\"auth\">by: " . $author;
-            echo " | " . date ("m.d.Y | h:ia", filemtime($post)) . "</p>";
-            $content = file_get_contents($post);
-            echo MarkdownExtra::defaultTransform($content . '***');
-            ?></header></article><?php
+            displayArticle($post, $author);
           }
         }
-        
         ###RENDER MULTI POST PAGE###
         else
         {
-          usort( $posts, function( $b, $a ) { return filemtime($a) - filemtime($b); });
           $n = $postsOnHome;
           if (count($posts) < $postsOnHome){
             $n = count($posts);
           }
+          reset($posts);
           for ($i = 1; $i <= $n; $i++) {
             $post = current($posts);
-            ?><article><header><?php
-            echo "<h1>" . articleName($post) . "</h1>";
-            echo "<p class=\"auth\">by: " . $author;
-            echo " | " . date ("m.d.Y | h:ia", filemtime($post)) . "</p>";
-            $content = file_get_contents($post);
-            echo MarkdownExtra::defaultTransform($content . '***');
-            ?></header></article><?php
+            displayArticle($post, $author);
             $post = next($posts);
           }
         }
