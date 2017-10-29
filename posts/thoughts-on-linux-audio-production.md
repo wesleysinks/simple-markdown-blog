@@ -1,4 +1,4 @@
-In this post, I share some personal experience with computing an desktop Linux, and provide info for anyone interested in getting started. You can jump to [the installation info](#steps) if you'd rather not read my background.
+In this post, I share some personal experience with computing with desktop Linux, and provide info for anyone interested in getting started. You can jump to [the installation info](#steps) if you'd rather not read my background.
 
 ## Why Desktop Linux?
 
