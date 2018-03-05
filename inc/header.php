@@ -20,6 +20,7 @@
   <![endif]-->
 </head>
 <body>
+<?php include_once "analyticstracking.php" ?>
   <div id="footerDown">
     <div id="headerWrap">
       <header id="mainHeader">

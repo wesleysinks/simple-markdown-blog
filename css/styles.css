@@ -75,15 +75,12 @@ h1#siteTitle a{
 
 p, li{
     font-size: 1em;
-}
-
-p {
     margin: 1em 0;
     line-height: 1.5em;
 }
 
-li {
-    line-height: 1em;
+ul li {
+    margin: 0;
 }
 
 ul {

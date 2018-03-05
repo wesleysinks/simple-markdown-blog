@@ -10,8 +10,9 @@ function slug($post) #returns slug from filename
 
 function articleName($slug) #returns hyperlinked text from slug
 {
-  return "<a href=\"" . slug($slug) . "\">" . ucwords(str_replace(["-", "_"], " ", str_replace("/", "", slug($slug)))) . "</a>";
+  return '<a href="http://wsle.me' . slug($slug) . "\">" . ucwords(str_replace(["-", "_"], " ", str_replace("/", "", slug($slug)))) . "</a>";
 }
+//Used absolute url since I'm forwarding domain.
 
 function displayArticle ($post, $author) {
     $content = file_get_contents($post);
